@@ -1,7 +1,7 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const mat_1 = require("./mat");
-let n1 = 10;
-let n2 = 5;
-console.log(`SOMA: ${(0, mat_1.somar)(n1, n2)}`);
-console.log(`SUBTRAÇÃO: ${(0, mat_1.subtrair)(n1, n2)}`);
+const validator_1 = __importDefault(require("validator"));
+console.log(validator_1.default.isEmail('ausdhaouisd'));
