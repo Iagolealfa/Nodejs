@@ -3,15 +3,15 @@ import {Router,Request,Response} from 'express';
 const router = Router();
 
 router.get('/',(req: Request,res: Response)=>{
-    res.send('Olá Mundo!')
+    res.render('home');
 })
 
 router.get('/contato',(req: Request,res: Response)=>{
-    res.send('Formulário de Contato')
+    res.send('Formulário de Contato');
 })
 
 router.get('/sobre',(req: Request,res: Response)=>{
-    res.send('Página institucional sobre a impresa')
+    res.send('Página institucional sobre a impresa');
 })
 
 export default router;
