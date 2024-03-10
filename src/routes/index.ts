@@ -26,12 +26,20 @@ router.get('/',(req: Request,res: Response)=>{
     });
 })
 
-router.get('pages/contato',(req: Request,res: Response)=>{
-    res.render('contato')
+router.get('/contato',(req: Request,res: Response)=>{
+    res.render('pages/contato')
 })
 
-router.get('pages/sobre',(req: Request,res: Response)=>{
-    res.render('sobre')
+router.get('/sobre',(req: Request,res: Response)=>{
+    res.render('pages/sobre')
+})
+
+router.get('/nome',(req: Request,res: Response)=>{
+    let nome: string = req.query.nome as string;
+    
+    res.render('pages/nome',{
+        nome
+    })
 })
 
 export default router;
