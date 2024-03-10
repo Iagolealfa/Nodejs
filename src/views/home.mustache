@@ -11,6 +11,9 @@
     {{#showOld}}
         Como está a vida meu nobre?
     {{/showOld}}
+    {{^showOld}}
+        Tudo bem pae?
+    {{/showOld}}    
 
     <hr/>
 
@@ -19,12 +22,18 @@
         {{#products}}
             <li>{{title}} - R$ {{ price }}</li>
         {{/products}}
+        {{^products}}
+            Não há produtos a serem exibidos
+        {{/products}}
     </ul>
 
     <hr/>
     <ul>
         {{#frasesDoDia}}
             <li> {{.}} </li>
+        {{/frasesDoDia}}
+        {{^frasesDoDia}}
+            Não há frases a serem exibidas hoje :/
         {{/frasesDoDia}}
     </ul>
 </body>
