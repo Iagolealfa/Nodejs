@@ -1,10 +1,4 @@
-<html>
-<head>
-    <title>Página Home </title>
-</head>
-<body>
-    <h1>Título da Página</h1>
-    <hr/>
+{{>partials/header}}
     
     Seja muito bem vindo {{name}} {{lastname}}!
 
@@ -20,7 +14,7 @@
     <h2>Pizzas</h2>
     <ul>
         {{#products}}
-            <li>{{title}} - R$ {{ price }}</li>
+            {{>partials/productitem}}
         {{/products}}
         {{^products}}
             Não há produtos a serem exibidos
@@ -36,5 +30,4 @@
             Não há frases a serem exibidas hoje :/
         {{/frasesDoDia}}
     </ul>
-</body>
-</html>
+{{>partials/footer}}

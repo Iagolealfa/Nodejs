@@ -9,7 +9,7 @@ router.get('/',(req: Request,res: Response)=>{
         showOld = true;
     }
    
-    res.render('home', {
+    res.render('pages/home', {
         name : 'Iago',
         lastname : 'Almeida',
         showOld,
@@ -26,12 +26,12 @@ router.get('/',(req: Request,res: Response)=>{
     });
 })
 
-router.get('/contato',(req: Request,res: Response)=>{
-    res.send('Formulário de Contato');
+router.get('pages/contato',(req: Request,res: Response)=>{
+    res.render('contato')
 })
 
-router.get('/sobre',(req: Request,res: Response)=>{
-    res.send('Página institucional sobre a impresa');
+router.get('pages/sobre',(req: Request,res: Response)=>{
+    res.render('sobre')
 })
 
 export default router;
