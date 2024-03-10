@@ -10,7 +10,6 @@
     {{/showOld}}    
 
     <hr/>
-
     <h2>Pizzas</h2>
     <ul>
         {{#products}}
@@ -20,7 +19,13 @@
             Não há produtos a serem exibidos
         {{/products}}
     </ul>
-
+    <hr/>
+    <h2>Pizzas a partir de R$45 </h2>
+    <ul>
+        {{#expensives}}
+            {{>partials/productitem}}
+        {{/expensives}}
+    </ul>
     <hr/>
     <ul>
         {{#frasesDoDia}}
