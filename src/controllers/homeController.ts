@@ -1,16 +1,15 @@
 import {Response, Request} from 'express';
 
-import { sequelize } from '../instances/mysql';
+import { User } from '../models/user';
 
 import {Product} from '../models/Product'
 
 export const home = async (req: Request,res: Response)=>{
-    try{
-        await sequelize.authenticate()
-        console.log('Conexão estabelecida com sucesso')
-    }catch(error){
-        console.log(`Deu problema: ${error}`)
-    }
+    
+    let users = await User.findAll()
+
+
+
 
     let age: number = 45;
     let showOld :boolean = false;
@@ -20,7 +19,7 @@ export const home = async (req: Request,res: Response)=>{
     let list = Product.getAll();
     let expensiveList = Product.getPriceAfter(45);
 
-    res.render('pages/home', {
+    res.render('pages/home',  {
         name : 'Iago',
         lastname : 'Almeida',
         showOld,
@@ -30,6 +29,7 @@ export const home = async (req: Request,res: Response)=>{
             "Acredite em si mesmo e você será imparável.",
             "Cada dia é uma nova oportunidade para brilhar.",
             "A persistência leva ao sucesso."
-        ] 
+        ] ,
+        users
     });
 }
