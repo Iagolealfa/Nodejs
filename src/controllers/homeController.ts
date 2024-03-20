@@ -1,7 +1,17 @@
 import {Response, Request} from 'express';
+
+import { sequelize } from '../instances/mysql';
+
 import {Product} from '../models/Product'
 
-export const home = (req: Request,res: Response)=>{
+export const home = async (req: Request,res: Response)=>{
+    try{
+        await sequelize.authenticate()
+        console.log('Conexão estabelecida com sucesso')
+    }catch(error){
+        console.log(`Deu problema: ${error}`)
+    }
+
     let age: number = 45;
     let showOld :boolean = false;
     if (age > 50){
