@@ -1,12 +1,22 @@
 import {Response, Request} from 'express';
-
+import { Op } from 'sequelize';
 import { User } from '../models/user';
 
 import {Product} from '../models/Product'
 
 export const home = async (req: Request,res: Response)=>{
     
-    let users = await User.findAll()
+    let users = await User.findAll({
+        where : {
+            age : {
+                [Op.gte] : 18
+            }
+            
+        },
+        offset: 4,
+        limit : 2
+
+    },)
 
 
 
